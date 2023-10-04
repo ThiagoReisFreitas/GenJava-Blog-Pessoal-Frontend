@@ -1,11 +1,16 @@
-import React from "react";
-import './Home.css';
+import React, {useState} from 'react';
 
-function Home(){
-    return(
-        <>
-            <h1>Home</h1>
-        </>
+function Home() {
+    const [looggedIn, setLoggedIn] = useState(false);
+    
+    return (
+        <div>
+            {looggedIn ? (
+                <h1>Bem-vindo de volta!</h1>
+            ) : (
+                <button onClick={() => setLoggedIn(true)}>Entrar</button>
+            )}
+        </div>
     );
 }
 
